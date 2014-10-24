@@ -1,0 +1,32 @@
+192.168.171.1
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/systemvg-rootlv
+                      3.9G  2.1G  1.7G  56% /
+/dev/mapper/systemvg-varlv
+                      2.0G  749M  1.2G  40% /var
+/dev/mapper/systemvg-homelv
+                      992M   35M  906M   4% /home
+/dev/mapper/systemvg-usrlv
+                      4.9G  2.8G  1.9G  60% /usr
+/dev/mapper/systemvg-tmplv
+                      992M   97M  844M  11% /tmp
+/dev/sda1              99M   13M   82M  14% /boot
+tmpfs                 2.0G     0  2.0G   0% /dev/shm
+/dev/mapper/systemvg-optlv
+                       78G   48G   26G  66% /opt
+ftp:1
+ntpd:0
+sendmail:0
+postfix:0
+iptables:0
+selinux:0
+nfs:0
+tivoli:1
+ihs:1
+ihs_bin:/opt/IBMIHS/bin
+ihs_conf:/opt/WCSIHS/httpconf/httpd_f_all.conf
+
+logstash:1
+
+flume:1
+

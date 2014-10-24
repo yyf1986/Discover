@@ -1,0 +1,33 @@
+192.168.161.1
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/systemvg-rootlv
+                      4.9G  1.8G  2.9G  38% /
+/dev/mapper/systemvg-varlv
+                      2.0G  256M  1.6G  14% /var
+/dev/mapper/systemvg-tmplv
+                      3.9G  110M  3.6G   3% /tmp
+/dev/sda1              99M   13M   82M  14% /boot
+tmpfs                 7.9G     0  7.9G   0% /dev/shm
+/dev/mapper/systemvg-usrlv
+                       49G   23G   24G  50% /usr
+/dev/mapper/systemvg-optlv
+                       20G  4.1G   15G  22% /opt
+/dev/mapper/systemvg-homelv
+                      6.8G  198M  6.3G   3% /home
+ftp:1
+ntpd:0
+sendmail:0
+postfix:0
+iptables:1
+selinux:0
+nfs:0
+tivoli:1
+was:1
+WAS_USER:wcsuser
+Dmgr_path:/usr/IBM/WebSphere/AppServer/profiles/WCSDmgr
+profile_info:/usr/IBM/WebSphere/AppServer/profiles/EMALL--emall0101_svr2,server1;
+
+db2:1
+
+logstash:1
+

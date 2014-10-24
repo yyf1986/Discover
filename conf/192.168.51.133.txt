@@ -1,0 +1,28 @@
+192.168.51.133
+Filesystem            Size  Used Avail Use% Mounted on
+/dev/mapper/systemvg-rootlv
+                      7.9G  674M  6.9G   9% /
+tmpfs                 3.8G     0  3.8G   0% /dev/shm
+/dev/vda1             194M   32M  153M  18% /boot
+/dev/mapper/systemvg-homelv
+                      2.0G   68M  1.9G   4% /home
+/dev/mapper/systemvg-optlv
+                       30G  2.9G   26G  11% /opt
+/dev/mapper/systemvg-tmplv
+                      2.0G  118M  1.8G   7% /tmp
+/dev/mapper/systemvg-usrlv
+                      9.9G  999M  8.4G  11% /usr
+/dev/mapper/systemvg-varlv
+                      5.0G  233M  4.5G   5% /var
+FTP:0
+NTPD:0
+sendmail:0
+postfix:0
+iptables:0
+selinux:0
+nfs:0
+tivoli:1
+was:1
+WAS_USER:wasuser
+profile_info:/opt/IBM/WebSphere/AppServer/profiles/eppscssApp04--EPP-CSS-serv04
+
