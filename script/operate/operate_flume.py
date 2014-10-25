@@ -24,17 +24,17 @@ def start_stop_flume(action,ip,configfile):
             cmd = """ ps -ef | grep '/opt/flume'|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s flume stop sucess." % ip
+                print "%s flume stop sucess." % ip
             else:
                 cmd = """ ps -ef | grep '/opt/flume'|grep -v grep |awk '{print \$2}'|xargs -I {} kill -9 {} """
                 run(ip,'root',cmd)
                 cmd = """ ps -ef | grep '/opt/flume'|grep -v grep|wc -l """
                 out = run(ip,'root',cmd)[0].strip('\r\n')
                 if int(out) == 0:
-                    return "%s flume stop sucess." % ip
+                    print "%s flume stop sucess." % ip
                 else:
-                    return "%s flume stop fail." % ip
+                    print "%s flume stop fail." % ip
         elif action == "start":
-            return "%s flume 有定时任务会自动启动." % ip
+            print "%s flume 有定时任务会自动启动." % ip
     else:
-        return ""
+        pass
