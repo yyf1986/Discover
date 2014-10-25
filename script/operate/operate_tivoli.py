@@ -24,9 +24,9 @@ def start_stop_tivoli(action,ip,configfile):
             cmd = """ ps -ef | grep tivoli|grep -v grep|wc -l """
             out = run(ip,'root',cmd)
             if int(out) == 0:
-                return "%s tivoli stop sucess." % ip
+                print "%s tivoli stop sucess." % ip
             else:
-                return "%s tivoli stop fail." % ip
+                print "%s tivoli stop fail." % ip
         elif action == "start":
             cmd = """ cd /tivoli/for_os/bin/;./itmcmd agent start lz """
             run(ip,'root',cmd)
@@ -34,10 +34,8 @@ def start_stop_tivoli(action,ip,configfile):
             cmd = """ ps -ef | grep tivoli|grep -v grep|wc -l """
             out = run(ip,'root',cmd)
             if int(out) == 1:
-                return "%s tivoli start sucess." % ip
+                print "%s tivoli start sucess." % ip
             else:
-                return "%s tivoli start fail." % ip
+                print "%s tivoli start fail." % ip
     else:
-        return ""
-
-#print start_stop_tivoli("start","192.168.171.1","/home/13110508/yao/conf/192.168.171.1.txt")
+        pass
