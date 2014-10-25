@@ -23,19 +23,17 @@ def start_stop_iptables(action,ip,configfile):
             cmd = """ service iptables status """
             out = run(ip,'root',cmd)
             if re.search('is stopped',out):
-                return "%s iptables stop sucess." % ip
+                print "%s iptables stop sucess." % ip
             else:
-                return "%s iptables stop fail." % ip
+                print "%s iptables stop fail." % ip
         elif action == "start":
             cmd = """ service iptables start """
             run(ip,'root',cmd)
             cmd = """ service iptables status """
             out = run(ip,'root',cmd)
             if re.search('is running',out):
-                return "%s iptables start sucess." % ip
+                print "%s iptables start sucess." % ip
             else:
-                return "%s iptables start fail." % ip
+                print "%s iptables start fail." % ip
     else:
-        return ""
-
-#print start_stop_iptables("start","192.168.171.1","/home/13110508/yao/conf/192.168.171.1.txt")
+        pass
