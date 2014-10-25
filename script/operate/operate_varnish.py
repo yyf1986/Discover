@@ -37,9 +37,9 @@ def start_stop_varnish(action,ip,configfile):
                 cmd = """ ps -ef | grep varnish|grep -v grep|wc -l """
                 out = run(ip,'root',cmd)[0].strip('\r\n')
                 if int(out) == 0:
-                    return "%s varnish stop sucess." % ip
+                    print "%s varnish stop sucess." % ip
                 else:
-                    return "%s varnish stop fail." % ip
+                    print "%s varnish stop fail." % ip
             elif action == "start":
                 cmd = """ cd /root;./%s start;./startVarnishMonitorLog.sh;./startVarnishncsaLog.sh """ % start_bin
                 run(ip,'root',cmd)
@@ -47,10 +47,10 @@ def start_stop_varnish(action,ip,configfile):
                 cmd = """ ps -ef | grep varnish|grep -v grep|wc -l """
                 out = run(ip,'root',cmd)[0].strip('\r\n')
                 if int(out) >= 5:
-                    return "%s varnish start sucess." % ip
+                    print "%s varnish start sucess." % ip
                 else:
-                    return "%s varnish start fail." % ip
+                    print "%s varnish start fail." % ip
         else:
-            return "%s varnish 没有启动脚本或者启动脚本不规范.请手动启动或者停止."
+            print "%s varnish 没有启动脚本或者启动脚本不规范.请手动启动或者停止."
     else:
-        return ""
+        pass
