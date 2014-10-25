@@ -32,9 +32,9 @@ def start_stop_apache(action,ip,configfile):
             cmd = """ ps -ef | grep httpd|grep apache|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s apache stop sucess." % ip
+                print "%s apache stop sucess." % ip
             else:
-                return "%s apache stop fail." % ip
+                print "%s apache stop fail." % ip
         elif action == "start":
             if apache_conf != "":
                 cmd = """ %s/apachectl -k start -f %s """ % (apache_bin,apache_conf)
@@ -45,8 +45,8 @@ def start_stop_apache(action,ip,configfile):
             cmd = """ ps -ef | grep httpd|grep apache|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) >= 2:
-                return "%s apache start sucess." % ip
+                print "%s apache start sucess." % ip
             else:
-                return "%s apache start fail." % ip
+                print "%s apache start fail." % ip
     else:
-        return ""
+        pass
