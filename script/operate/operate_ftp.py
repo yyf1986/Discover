@@ -37,5 +37,3 @@ def start_stop_ftp(action,ip,configfile):
                 print "%s ftp start fail." % ip
     else:
         pass
-
-#print start_stop_ftp("start","192.168.171.1","/home/13110508/yao/conf/192.168.171.1.txt")
