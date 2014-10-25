@@ -18,8 +18,8 @@ def start_stop_redis(action,ip,configfile):
     out = os.popen(cmd).readlines()[0].strip('\r\n')
     if int(out) == 1:
         if action == "stop":
-            return "%s redis需要手动停止." % ip
+            print "%s redis需要手动停止." % ip
         elif action == "start":
-            return "%s redis需要手动启动." % ip
+            print "%s redis需要手动启动." % ip
     else:
-        return ""
+        pass
