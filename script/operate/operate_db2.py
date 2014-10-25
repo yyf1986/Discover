@@ -18,8 +18,8 @@ def start_stop_db2(action,ip,configfile):
     out = os.popen(cmd).readlines()[0].strip('\r\n')
     if int(out) == 1:
         if action == "stop":
-            return "%s db2需要手动停止." % ip
+            print "%s db2需要手动停止." % ip
         elif action == "start":
-            return "%s db2需要手动启动." % ip
+            print "%s db2需要手动启动." % ip
     else:
-        return ""
+        pass
