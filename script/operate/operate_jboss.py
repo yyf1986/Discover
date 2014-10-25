@@ -24,9 +24,9 @@ def start_stop_jboss(action,ip,configfile):
             cmd = """ ps -ef | grep jboss|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s jboss stop sucess." % ip
+                print "%s jboss stop sucess." % ip
             else:
-                return "%s jboss stop fail." % ip
+                print "%s jboss stop fail." % ip
         elif action == "start":
             cmd = """ cd /opt/jboss-1.4.1/bin;nohup ./app.sh start > /dev/null & """
             run(ip,'root',cmd)
@@ -34,8 +34,8 @@ def start_stop_jboss(action,ip,configfile):
             cmd = """ ps -ef | grep jboss|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) >= 2:
-                return "%s jboss start sucess." % ip
+                print "%s jboss start sucess." % ip
             else:
-                return "%s jboss start fail." % ip
+                print "%s jboss start fail." % ip
     else:
-        return ""
+        pass
