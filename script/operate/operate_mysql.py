@@ -18,8 +18,8 @@ def start_stop_mysql(action,ip,configfile):
     out = os.popen(cmd).readlines()[0].strip('\r\n')
     if int(out) == 1:
         if action == "stop":
-            return "%s mysql需要手动停止." % ip
+            print "%s mysql需要手动停止." % ip
         elif action == "start":
-            return "%s mysql需要手动启动." % ip
+            print "%s mysql需要手动启动." % ip
     else:
-        return ""
+        pass
