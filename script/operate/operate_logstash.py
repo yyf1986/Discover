@@ -24,9 +24,9 @@ def start_stop_logstash(action,ip,configfile):
             cmd = """ ps -ef | grep logstash|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s logstash stop sucess." % ip
+                print "%s logstash stop sucess." % ip
             else:
-                return "%s logstash stop fail." % ip
+                print "%s logstash stop fail." % ip
         elif action == "start":
             cmd = """ cd /opt/logstash-1.4.1/bin;nohup ./app.sh start > /dev/null & """
             run(ip,'root',cmd)
@@ -34,8 +34,8 @@ def start_stop_logstash(action,ip,configfile):
             cmd = """ ps -ef | grep logstash|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) >= 1:
-                return "%s logstash start sucess." % ip
+                print "%s logstash start sucess." % ip
             else:
-                return "%s logstash start fail." % ip
+                print "%s logstash start fail." % ip
     else:
-        return ""
+        pass
