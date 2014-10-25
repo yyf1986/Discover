@@ -26,9 +26,9 @@ def start_stop_nginx(action,ip,configfile):
             cmd = """ ps -ef | grep nginx|grep -E 'master process|worker process'|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s nginx stop sucess." % ip
+                print "%s nginx stop sucess." % ip
             else:
-                return "%s nginx stop fail." % ip
+                print "%s nginx stop fail." % ip
         elif action == "start":
             cmd = """ %s """ % nginx_bin
             run(ip,'root',cmd)
@@ -36,8 +36,8 @@ def start_stop_nginx(action,ip,configfile):
             cmd = """ ps -ef | grep nginx|grep -E 'master process|worker process'|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) >= 2:
-                return "%s nginx start sucess." % ip
+                print "%s nginx start sucess." % ip
             else:
-                return "%s nginx start fail." % ip
+                print "%s nginx start fail." % ip
     else:
-        return ""
+        pass
