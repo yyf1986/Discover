@@ -24,29 +24,29 @@ def start_stop_ihs(action,ip,configfile):
         if action == "stop":
             if ihs_conf != "":
                 cmd = """ %s/apachectl -k stop -f %s """ % (ihs_bin,ihs_conf)
-                #run(ip,'root',cmd)
+                run(ip,'root',cmd)
             else:
                 cmd = """ %s/apachectl -k stop """ % ihs_bin
-                #run(ip,'root',cmd)
+                run(ip,'root',cmd)
             time.sleep(10)
             cmd = """ ps -ef | grep httpd|grep IBM|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) == 0:
-                return "%s ihs stop sucess." % ip
+                print "%s ihs stop sucess." % ip
             else:
-                return "%s ihs stop fail." % ip
+                print "%s ihs stop fail." % ip
         elif action == "start":
             if ihs_conf != "":
                 cmd = """ %s/apachectl -k start -f %s """ % (ihs_bin,ihs_conf)
-                #run(ip,'root',cmd)
+                run(ip,'root',cmd)
             else:
                 cmd = """ %s/apachectl -k start """ % ihs_bin
-                #run(ip,'root',cmd)
+                run(ip,'root',cmd)
             cmd = """ ps -ef | grep httpd|grep IBM|grep -v grep|wc -l """
             out = run(ip,'root',cmd)[0].strip('\r\n')
             if int(out) >= 2:
-                return "%s ihs start sucess." % ip
+                print "%s ihs start sucess." % ip
             else:
-                return "%s ihs start fail." % ip
+                print "%s ihs start fail." % ip
     else:
-        return ""
+        pass
