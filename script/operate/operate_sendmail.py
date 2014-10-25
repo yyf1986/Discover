@@ -23,19 +23,17 @@ def start_stop_sendmail(action,ip,configfile):
             cmd = """ service sendmail status """
             out = run(ip,'root',cmd)
             if re.search('is stopped',out):
-                return "%s sendmail stop sucess." % ip
+                print "%s sendmail stop sucess." % ip
             else:
-                return "%s sendmail stop fail." % ip
+                print "%s sendmail stop fail." % ip
         elif action == "start":
             cmd = """ service sendmail start """
             run(ip,'root',cmd)
             cmd = """ service sendmail status """
             out = run(ip,'root',cmd)
             if re.search('is running',out):
-                return "%s sendmail start sucess." % ip
+                print "%s sendmail start sucess." % ip
             else:
-                return "%s sendmail start fail." % ip
+                print "%s sendmail start fail." % ip
     else:
-        return ""
-
-#print start_stop_sendmail("start","192.168.171.1","/home/13110508/yao/conf/192.168.171.1.txt")
+        pass
