@@ -23,19 +23,19 @@ def start_stop_ftp(action,ip,configfile):
             cmd = """ service vsftpd status """
             out = run(ip,'root',cmd)
             if re.search('is stopped',out):
-                return "%s ftp stop sucess." % ip
+                print "%s ftp stop sucess." % ip
             else:
-                return "%s ftp stop fail." % ip
+                print "%s ftp stop fail." % ip
         elif action == "start":
             cmd = """ service vsftpd start """
             run(ip,'root',cmd)
             cmd = """ service vsftpd status """
             out = run(ip,'root',cmd)
             if re.search('is running',out):
-                return "%s ftp start sucess." % ip
+                print "%s ftp start sucess." % ip
             else:
-                return "%s ftp start fail." % ip
+                print "%s ftp start fail." % ip
     else:
-        return ""
+        pass
 
 #print start_stop_ftp("start","192.168.171.1","/home/13110508/yao/conf/192.168.171.1.txt")
