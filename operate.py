@@ -12,7 +12,7 @@ from script.operate import operate_iptables
 from script.operate import operate_selinux
 from script.operate import operate_nfs
 from script.operate import operate_tivoli
-#from script.operate import operate_was
+from script.operate import operate_was
 from script.operate import operate_ihs
 from script.operate import operate_varnish
 from script.operate import operate_apache
